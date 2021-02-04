@@ -2,6 +2,18 @@
 
 In this project, we will be going through a complete guide on deploying a Docker Swarm load balancer on a multi-node Amazon EC2 cluster. This objective is achieved using various tasks that can be deployed using Docker's command-line interface or python SDK API's. The idea is to design a load balancer that can distribute the load on different worker machines, based on the inter-arrival of requests. Using this project, you can understand the complete Docker Swarm architecture and how it can be leveraged in Amazon EC2 Linux AMI instances.
 
+# Table of Contents
+- [Prerequisities](#prerequisities)
+- [Overview](#overview)
+- [Project Setup](#project-setup)
+  * [Setting up Amazon EC2 Linux AMI instance (Manager Node)](#setting-up-amazon-ec2-linux-ami-instance-manager-node)
+  * [Setting up Amazon EC2 Linux AMI instance (Worker Nodes)](#setting-up-amazon-ec2-linux-ami-instance-worker-nodes)
+- [Task 1: Pull the web application image and test](#task-1-pull-the-web-application-image-and-test)
+- [Task 2: Deploy a multi-service application in a Docker environment (Load Balancer)](#task-2-deploy-a-multi-service-application-in-a-docker-environment)
+- [Task 3: Generate load using Normal/Poisson distributed inter-arrival requests](#task-3-the-load-generator)
+- [Task 4: Add a Docker monitoring tool (google/cAdvisor)](#task-4-add-a-docker-monitoring-tool-googlecadvisor)
+- [Task 5: Insert benchmark results into MongoDB database & generate charts using R](#task-5-insert-benchmark-results-into-mongodb-database--generate-charts-using-r)
+
 # Prerequisities
 
 - Terminal or Command-line Interface
@@ -126,7 +138,7 @@ Now, we will initialize docker swarm on our manager node, so that other worker n
 ifconfig eth0
 ```
 
-![docker5.png](docker5.png)
+![docker5.png](img/docker5.png)
 
 Next, we can initialise the docker swarm using the above advertising address as shown below.
 
