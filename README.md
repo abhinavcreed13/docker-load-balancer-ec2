@@ -151,7 +151,7 @@ This command will provide the join token. You can save it somewhere. It will be 
 
 ### 6. Upload python scripts and create a virtual environment
 
-Finally, we will upload our entire python SDK scripts package in our manager mode. The package can be found in this GitHub URL: [https://github.com/abhinavcreed13/docker-load-balancer-ec2/blob/main/package/docker-project-aws.zip](https://github.com/abhinavcreed13/docker-load-balancer-ec2/blob/main/package/docker-project-aws.zip){:target="_blank"}.
+Finally, we will upload our entire python SDK scripts package in our manager mode. The package can be found in this GitHub URL: [https://github.com/abhinavcreed13/docker-load-balancer-ec2/blob/main/package/docker-project-aws.zip](https://github.com/abhinavcreed13/docker-load-balancer-ec2/blob/main/package/docker-project-aws.zip).
 
 This package can be uploaded into our EC2 instance using `scp` command as shown below.
 
@@ -237,7 +237,7 @@ Similarly, we can achieve a similar task using Docker Python SDK by running the 
 python task01.py
 ```
 
-The script can be download from here: [https://github.com/abhinavcreed13/docker-load-balancer-ec2/blob/main/task01.py](https://github.com/abhinavcreed13/docker-load-balancer-ec2/blob/main/task01.py){:target="_blank"}. 
+The script can be download from here: [https://github.com/abhinavcreed13/docker-load-balancer-ec2/blob/main/task01.py](https://github.com/abhinavcreed13/docker-load-balancer-ec2/blob/main/task01.py). 
 
 It uses `client.images.pull` to pull the image and then `client.containers.run` to run the container.
 
@@ -317,7 +317,7 @@ docker container ls -a
 
 ## Using Docker Python SDK
 
-Similarly, we can also use the Docker python SDK to achieve this task. We will be using [https://github.com/abhinavcreed13/docker-load-balancer-ec2/blob/main/task02.py](https://github.com/abhinavcreed13/docker-load-balancer-ec2/blob/main/task02.py){:target="_blank"} python script to deploy this stack which can be provided with command line parameters for enabling more control. This script should be executed on the **manager node** using the below commands.
+Similarly, we can also use the Docker python SDK to achieve this task. We will be using [https://github.com/abhinavcreed13/docker-load-balancer-ec2/blob/main/task02.py](https://github.com/abhinavcreed13/docker-load-balancer-ec2/blob/main/task02.py) python script to deploy this stack which can be provided with command line parameters for enabling more control. This script should be executed on the **manager node** using the below commands.
 
 ```yaml
 # deploy stack 
@@ -390,7 +390,7 @@ python task03.py \
 --iter 10
 ```
 
-The implementation of task03.py can be found here: [https://github.com/abhinavcreed13/docker-load-balancer-ec2/blob/main/task03.py](https://github.com/abhinavcreed13/docker-load-balancer-ec2/blob/main/task03.py){:target="_blank"}. 
+The implementation of task03.py can be found here: [https://github.com/abhinavcreed13/docker-load-balancer-ec2/blob/main/task03.py](https://github.com/abhinavcreed13/docker-load-balancer-ec2/blob/main/task03.py). 
 
 It is using `urllib.request` to hit the provided URL. In addition, it is using `random.expovariate(args.lamb)` for generating poisson inter-arrival request times and `np.random.normal(args.mu, args.sigma,args.iter)` for generating normal inter-arrival request times.
 
@@ -420,7 +420,7 @@ docker run \
 
 ## Using Docker Python SDK
 
-The implementation using python SDK can be found here: [https://github.com/abhinavcreed13/docker-load-balancer-ec2/blob/main/task04.py](https://github.com/abhinavcreed13/docker-load-balancer-ec2/blob/main/task04.py){:target="_blank"}.
+The implementation using python SDK can be found here: [https://github.com/abhinavcreed13/docker-load-balancer-ec2/blob/main/task04.py](https://github.com/abhinavcreed13/docker-load-balancer-ec2/blob/main/task04.py).
 
 ```python
 # publish cAdvisor on port 70
@@ -433,7 +433,7 @@ Now, if we generate load using normal or Poisson distribution, it can be seen on
 
 # Task 5: Insert benchmark results into MongoDB database & generate charts using R
 
-Next, we will insert our benchmark results into the MongoDB database as deployed in our stack. We will generate a normal or Poisson distributed request load using different inter-arrival times. This can be easily achieved using our task05.py - [https://github.com/abhinavcreed13/docker-load-balancer-ec2/blob/main/task05.py](https://github.com/abhinavcreed13/docker-load-balancer-ec2/blob/main/task05.py){:target="_blank"} - script as shown below by running on the manager node.
+Next, we will insert our benchmark results into the MongoDB database as deployed in our stack. We will generate a normal or Poisson distributed request load using different inter-arrival times. This can be easily achieved using our task05.py - [https://github.com/abhinavcreed13/docker-load-balancer-ec2/blob/main/task05.py](https://github.com/abhinavcreed13/docker-load-balancer-ec2/blob/main/task05.py) - script as shown below by running on the manager node.
 
 **Note:** make sure google/cAdvisor is also running on worker nodes.
 
@@ -480,7 +480,7 @@ python task05.py \
 --write-to-file False
 ```
 
-Once we have stored all the stats in our chosen database, we can get all the collections of our database using task05-store-collections.py - [https://github.com/abhinavcreed13/docker-load-balancer-ec2/blob/main/task05-store-collections.py](https://github.com/abhinavcreed13/docker-load-balancer-ec2/blob/main/task05-store-collections.py){:target="_blank"} - script and create CPU and memory charts using our graphs.R - [https://github.com/abhinavcreed13/docker-load-balancer-ec2/blob/main/graphs.R](https://github.com/abhinavcreed13/docker-load-balancer-ec2/blob/main/graphs.R){:target="_blank"} - script.
+Once we have stored all the stats in our chosen database, we can get all the collections of our database using task05-store-collections.py - [https://github.com/abhinavcreed13/docker-load-balancer-ec2/blob/main/task05-store-collections.py](https://github.com/abhinavcreed13/docker-load-balancer-ec2/blob/main/task05-store-collections.py){:target="_blank"} - script and create CPU and memory charts using our graphs.R - [https://github.com/abhinavcreed13/docker-load-balancer-ec2/blob/main/graphs.R](https://github.com/abhinavcreed13/docker-load-balancer-ec2/blob/main/graphs.R) - script.
 
 ```bash
 # run on manager node
